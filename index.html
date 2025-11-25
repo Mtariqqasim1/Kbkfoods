@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karachi Bismillah Kabab</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="hamburger" onclick="toggleMobileNav()"><i class="fas fa-bars"></i></div>
+                <div class="logo">KBK FOods</div>
+                
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#footer">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="icon-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+                    <div class="icon-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </div>
+                </div>
+            </nav>
+            <div class="search-container" id="searchContainer">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search" style="color:#888; margin-right:10px;"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search food..." onkeyup="filterMenu()">
+                    <i class="fas fa-times" style="color:#888; cursor:pointer;" onclick="toggleSearch()"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <!-- Mobile Nav (Hidden Sidebar) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-close" onclick="toggleMobileNav()">&times;</div>
+        
+        <!-- Links -->
+        <div style="flex-grow: 1;">
+            <a href="#home" onclick="toggleMobileNav()">Home</a>
+            <a href="#menu" onclick="toggleMobileNav()">Menu</a>
+            <a href="#footer" onclick="toggleMobileNav()">Contact Us</a>
+        </div>
+
+        <!-- BRANDING AT BOTTOM OF MENU -->
+        <div class="branding-section">
+            <p class="branding-text">Powered by <br> <span class="branding-name">MintQodesolutions</span></p>
+            <div class="branding-icons">
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-text">
+                <span style="letter-spacing:2px; font-weight:600; font-size:14px; color:var(--primary);">PREMIUM TASTE</span>
+                <h1>Discover the <br> <span style="color:var(--primary);">Dark Flavor</span></h1>
+                <p>Authentic cuisine cooked with passion. Experience the best dining from the comfort of your home.</p>
+                <button class="btn btn-primary hero-btn" onclick="document.getElementById('menu').scrollIntoView()">Explore Menu</button>
+            </div>
+            <div class="hero-img">
+                <img src="Asests/pizza.png" alt="Hero Dish">
+            </div>
+        </div>
+    </section>
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-img">
+                <img src="Asests/behari boti.png" alt="Hero Dish">
+            </div>
+            
+            <button  class="btn btn-primary hero-btn" onclick="document.getElementById('menu').scrollIntoView()">Explore Menu</button>
+
+            <div class="hero-img">
+                <img src="Asests/behari boti.png" alt="Hero Dish">
+            </div>
+            <!-- <div class="hero-text">
+                <span style="letter-spacing:2px; font-weight:600; font-size:14px; color:var(--primary);">PREMIUM TASTE</span>
+                <h1>Discover the <br> <span style="color:var(--primary);">Dark Flavor</span></h1>
+                <p>Authentic cuisine cooked with passion. Experience the best dining from the comfort of your home.</p>
+                <button class="btn btn-primary hero-btn" onclick="document.getElementById('menu').scrollIntoView()">Explore Menu</button>
+            </div> -->
+            
+        </div>
+        
+    </section>
+    <!-- Categories -->
+    <section class="container reveal" style="margin-top:20px;">
+        <h2 class="section-title">Categories</h2>
+        <div class="cat-grid">
+            <div class="cat-item active" onclick="filterCategory('all', this)">All</div>
+            <div class="cat-item" onclick="filterCategory('burger', this)">Burgers</div>
+            <div class="cat-item" onclick="filterCategory('pizza', this)">Pizza</div>
+            <div class="cat-item" onclick="filterCategory('desi', this)">Desi</div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="container reveal" id="menu">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="menu-grid" id="menuGrid">
+            <!-- JS Injected -->
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="container reveal">
+        <h2 class="section-title">Happy Customers</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <div class="client-info">
+                    <img src="Asests/safzal.png" class="client-img">
+                    <div>
+                        <h4>Ali Hassan</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+                <p class="review-text">"The taste was absolutely amazing! The delivery was on time and the food was hot. Highly recommended!"</p>
+            </div>
+            <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <div class="client-info">
+                    <img src="Asests/ssk.png" class="client-img">
+                    <div>
+                        <h4>Sara Khan</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    </div>
+                </div>
+                <p class="review-text">"Best burger I've had in a while. The dark theme of the website is also very cool. Love it!"</p>
+            </div>
+            <div class="review-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <div class="client-info">
+                    <img src="Asests/faraz.png" class="client-img">
+                    <div>
+                        <h4>Bilal Ahmed</h4>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+                <p class="review-text">"Authentic Desi taste. The Biryani was spicy and flavorful. Will definitely order again."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="reveal">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">KBK Foods </div>
+                    <p>We believe in quality and taste. Our food is prepared by professional chefs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>isarpura Shahdadpur Road Nawabshah </span>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>0325-----997</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for latest offers.</p>
+                    <input type="email" placeholder="Email" style="width:100%; padding:10px; border-radius:5px; border:none; background:#222; color:white;">
+                    <button class="btn btn-primary" style="width:100%; margin-top:10px;">Subscribe</button>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!-- BRANDING FOOTER -->
+        <div class="copyright">
+            &copy; 2025 KBK Foods. All Rights Reserved.
+            <div class="brand-footer">
+                Powered by <strong>MintQodesolutions</strong>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div style="padding:20px;
+                    border-bottom:1px solid #333; 
+                    display:flex; 
+                    justify-content:space-between; 
+                    align-items:center;">
+            <h3>My Cart</h3>
+            <i class="fas fa-times" style="cursor:pointer;" onclick="toggleCart()"></i>
+        </div>
+        <div style="flex:1; overflow-y:auto; padding:20px;" id="cartBody"></div>
+        <div style="padding:20px; border-top:1px solid #333; background:#111;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-weight:bold;">
+                <span>Total</span><span id="cartTotal">Rs. 0</span>
+            </div>
+            <button class="btn btn-primary" style="width:100%;" onclick="checkoutWhatsApp()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="prodModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:3000; display:none; justify-content:center; align-items:center;">
+        <div style="background:#1e1e1e; padding:20px; width:90%; max-width:400px; border-radius:15px; border:1px solid #333; position:relative; animation: fadeInUp 0.4s ease;">
+            <i class="fas fa-times" style="position:absolute; top:15px; right:15px; cursor:pointer;" onclick="document.getElementById('prodModal').style.display='none'"></i>
+            <img id="m-img" src="" style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
+            <h3 id="m-title" style="margin-top:10px;"></h3>
+            <p id="m-desc" style="color:#888; font-size:13px; margin:10px 0;"></p>
+            <div style="display:flex; justify-content:space-between;">
+                <span id="m-price" style="color:var(--primary); font-weight:bold;"></span>
+                <button class="btn btn-primary" id="m-btn">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
