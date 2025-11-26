@@ -11,7 +11,7 @@
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const waNum = "+92253209977";
+        const waNum = "+923253209977";
 
         const grid = document.getElementById('menuGrid');
         function render(items) {
@@ -86,6 +86,7 @@
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         }
         checkScroll();
+
 
 
 
