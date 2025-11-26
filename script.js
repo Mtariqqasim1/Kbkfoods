@@ -1,12 +1,12 @@
 
         const menuData = [
-            { id: 1, name: "Spicy Zinger", category: "burger", price: 550, img: "Asests/zinger1.png", desc: "Crispy chicken with spicy mayo sauce." },
-            { id: 2, name: "Special Pizza", category: "Pizza", price: 1450, img: "Asests/pizza.png", desc: "Double patty beef burger with cheese." },
-             { id: 3, name: "Pizza", category: "Pizza", price: 1350, img: "Asests/pizza 2.jpg", desc: "Double patty beef burger with cheese." },
+            { id: 1, name: "Spicy Zinger", category: "burger", price: 550, img: "zinger1.png", desc: "Crispy chicken with spicy mayo sauce." },
+            { id: 2, name: "Special Pizza", category: "Pizza", price: 1450, img: "pizza.png", desc: "Double patty beef burger with cheese." },
+             { id: 3, name: "Pizza", category: "Pizza", price: 1350, img: "pizza 2.jpg", desc: "Double patty beef burger with cheese." },
             
-            { id: 4, name: "Behari Boti", category: "Boti", price: 1200, img: "Asests/behari boti.png", desc: "Italian crust with lots of cheese." },
-            { id: 5, name: "Special Macroni", category: "desi", price: 350, img: "Asests/macroni.jpg", desc: "BBQ grilled chicken piece with naan." },
-            { id: 6, name: "Fries", category: "desi", price: 100, img: "Asests/fries.jpg", desc: "Juicy beef mince kebabs." }
+            { id: 4, name: "Behari Boti", category: "Boti", price: 1200, img: "behari boti.png", desc: "Italian crust with lots of cheese." },
+            { id: 5, name: "Special Macroni", category: "desi", price: 350, img: "macroni.jpg", desc: "BBQ grilled chicken piece with naan." },
+            { id: 6, name: "Fries", category: "desi", price: 100, img: "fries.jpg", desc: "Juicy beef mince kebabs." }
             
         ];
 
@@ -86,3 +86,4 @@
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         }
         checkScroll();
+
